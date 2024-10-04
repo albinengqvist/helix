@@ -74,15 +74,12 @@ name = "go"
 auto-format = true
 formatter = { command = "goimports" }
 
-[language]]
+[[language]]
 name = "python"
+language-servers = [ "pyright", "ruff" ]
 
-[language.config.pylsp.plugins]
-flake8 = {enabled = false}
-autopep8 = {enabled = false}
-mccabe = {enabled = false}
-pycodestyle = {enabled = false}
-pyflakes = {enabled = false}
-pylint = {enabled = false}
-yapf = {enabled = false}
-ruff = { enabled = true, ignore = ["F401"], lineLength = 120 }
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language-server.ruff.config.settings]
+args = ["--ignore", "E501"]
