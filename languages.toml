@@ -59,7 +59,7 @@ language-servers = [ { name = "vscode-json-language-server", except-features = [
 
 [[language]]
 name = "markdown"
-formatter = { command = 'npx', args = ["prettier", "--parser", "markdown"] }
+formatter = { command = 'dprint', args = ["--stdin", "fmt", "md"] }
 soft-wrap.enable = true
 soft-wrap.wrap-at-text-width = true
 
